@@ -1,5 +1,5 @@
 ---
-title: Architecture - coding-agent-eval
+title: Architecture - coding-harness-eval
 description: System design and technical decisions for the coding agent comparison harness
 category: technical
 created: 2026-03-22
@@ -7,7 +7,7 @@ updated: 2026-03-22
 version: 1.0.0
 ---
 
-# Architecture: coding-agent-eval
+# Architecture: coding-harness-eval
 
 ## Data Flow
 
@@ -93,7 +93,7 @@ All data contracts use Pydantic models.
 ## Directory Structure
 
 ```
-coding-agent-eval/
+coding-harness-eval/
   agents/
     claude/
       phase1/           # Minimal CC config (CLAUDE.md, settings.json)
@@ -185,7 +185,7 @@ Goal: measure uplift from agent-specific power features.
 ## External Dependencies
 
 ```
-coding-agent-eval
+coding-harness-eval
    |
    +-- cc-recursive-team-mode   (CC subprocess mgmt, artifact parsing)
    |

@@ -1,5 +1,5 @@
 ---
-title: TODO - coding-agent-eval
+title: TODO - coding-harness-eval
 description: Implementation task tracker for the coding agent comparison harness
 category: implementation
 created: 2026-03-22
@@ -7,7 +7,7 @@ updated: 2026-03-22
 version: 1.0.0
 ---
 
-# TODO: coding-agent-eval
+# TODO: coding-harness-eval
 
 ## Done
 

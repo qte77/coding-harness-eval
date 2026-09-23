@@ -1,6 +1,6 @@
 ---
 title: Phase-1 Harness Roadmap
-description: Prioritized open work to complete the Phase-1 coding-agent-eval harness
+description: Prioritized open work to complete the Phase-1 coding-harness-eval harness
 category: planning
 updated: 2026-06-14
 ---
