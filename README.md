@@ -1,15 +1,15 @@
-# coding-agent-eval
+# coding-harness-eval
 
 > Hands-off coding-agent comparison harness
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-58f4c2.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](pyproject.toml)
-[![CodeQL](https://github.com/qte77/coding-agent-eval/actions/workflows/codeql.yaml/badge.svg)](https://github.com/qte77/coding-agent-eval/actions/workflows/codeql.yaml)
-[![ruff](https://github.com/qte77/coding-agent-eval/actions/workflows/ruff.yaml/badge.svg)](https://github.com/qte77/coding-agent-eval/actions/workflows/ruff.yaml)
-[![pyright](https://github.com/qte77/coding-agent-eval/actions/workflows/pyright.yaml/badge.svg)](https://github.com/qte77/coding-agent-eval/actions/workflows/pyright.yaml)
-[![pytest](https://github.com/qte77/coding-agent-eval/actions/workflows/pytest.yaml/badge.svg)](https://github.com/qte77/coding-agent-eval/actions/workflows/pytest.yaml)
-[![complexipy](https://github.com/qte77/coding-agent-eval/actions/workflows/complexipy.yaml/badge.svg)](https://github.com/qte77/coding-agent-eval/actions/workflows/complexipy.yaml)
-[![links](https://github.com/qte77/coding-agent-eval/actions/workflows/links-fail-fast.yaml/badge.svg)](https://github.com/qte77/coding-agent-eval/actions/workflows/links-fail-fast.yaml)
+[![CodeQL](https://github.com/qte77/coding-harness-eval/actions/workflows/codeql.yaml/badge.svg)](https://github.com/qte77/coding-harness-eval/actions/workflows/codeql.yaml)
+[![ruff](https://github.com/qte77/coding-harness-eval/actions/workflows/ruff.yaml/badge.svg)](https://github.com/qte77/coding-harness-eval/actions/workflows/ruff.yaml)
+[![pyright](https://github.com/qte77/coding-harness-eval/actions/workflows/pyright.yaml/badge.svg)](https://github.com/qte77/coding-harness-eval/actions/workflows/pyright.yaml)
+[![pytest](https://github.com/qte77/coding-harness-eval/actions/workflows/pytest.yaml/badge.svg)](https://github.com/qte77/coding-harness-eval/actions/workflows/pytest.yaml)
+[![complexipy](https://github.com/qte77/coding-harness-eval/actions/workflows/complexipy.yaml/badge.svg)](https://github.com/qte77/coding-harness-eval/actions/workflows/complexipy.yaml)
+[![links](https://github.com/qte77/coding-harness-eval/actions/workflows/links-fail-fast.yaml/badge.svg)](https://github.com/qte77/coding-harness-eval/actions/workflows/links-fail-fast.yaml)
 
 ## What
 

@@ -66,5 +66,5 @@ the agent against a broken project graded purely by `make validate`).
 
 M1 stores broken/solution as plain directories — transparent and self-contained, at the cost of
 duplication. M2 (single SUT git repo with `base_ref`/`solution_ref` tag pairs) is tracked in
-[#34](https://github.com/qte77/coding-agent-eval/issues/34); it changes only `ExpectedSolution`
+[#34](https://github.com/qte77/coding-harness-eval/issues/34); it changes only `ExpectedSolution`
 (dir → refs) and the runner's checkout step.
