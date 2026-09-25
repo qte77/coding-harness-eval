@@ -1,5 +1,5 @@
 ---
-title: Landscape, Security & Sandbox Research — coding-agent-eval
+title: Landscape, Security & Sandbox Research — coding-harness-eval
 description: Consolidated state analysis, arena landscape, repo-baseline security adoption, and agent-sandbox decisions
 category: research
 created: 2026-06-13
@@ -9,7 +9,7 @@ version: 1.0.0
 
 # Landscape, Security & Sandbox Research
 
-Consolidated findings produced before building `coding-agent-eval` (a hands-off harness that runs CLI
+Consolidated findings produced before building `coding-harness-eval` (a hands-off harness that runs CLI
 coding agents headless on identical specs, collects metrics, and produces comparison reports). Analyzed
 across five multi-agent research rounds, each adversarially verified. The repo is at **Phase 0** (docs +
 scaffold; no `src/`).
@@ -110,7 +110,7 @@ repo-specific controls (reported by the posture agent):
   is blocked; fall back to T1 only when cloud creds are absent or for fast offline iteration. Record an
   `isolation_tier` per run; publishable results require T2. Gate `--dangerously-skip-permissions` behind an explicit
   env flag.
-- **Fix `SECURITY.md`** — it points to the upstream template repo, not `qte77/coding-agent-eval`.
+- **Fix `SECURITY.md`** — it points to the upstream template repo, not `qte77/coding-harness-eval`.
 
 ## 6. Open blockers / de-risk spikes
 

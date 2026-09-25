@@ -1,4 +1,4 @@
-"""Pydantic data contracts for the coding-agent-eval harness.
+"""Pydantic data contracts for the coding-harness-eval harness.
 
 AgentBeats-compatible result schema with N=3 variance (mean + ``*_stddev``), token
 counts split by type, and a per-run sandbox ``isolation_tier``. See

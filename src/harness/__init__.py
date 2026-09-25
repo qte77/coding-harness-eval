@@ -1,3 +1,3 @@
-"""coding-agent-eval harness package."""
+"""coding-harness-eval harness package."""
 
 __version__ = "0.1.0"

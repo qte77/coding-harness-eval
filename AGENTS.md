@@ -1,4 +1,4 @@
-# coding-agent-eval
+# coding-harness-eval
 
 Hands-off coding-agent comparison harness. Runs CC, Cline, opencode, Codebuff, and
 Antigravity CLI headless on identical specs, collects structured metrics, and

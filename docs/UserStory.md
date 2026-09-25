@@ -1,5 +1,5 @@
 ---
-title: User Story - coding-agent-eval
+title: User Story - coding-harness-eval
 description: User stories for hands-off coding agent comparison harness
 category: requirements
 created: 2026-03-22
@@ -7,7 +7,7 @@ updated: 2026-03-22
 version: 1.0.0
 ---
 
-# User Story: coding-agent-eval
+# User Story: coding-harness-eval
 
 ## Problem Statement
 

@@ -1,5 +1,5 @@
 [project]
-name = "coding-agent-eval"
+name = "coding-harness-eval"
 version = "0.1.0"
 description = "Hands-off harness to run CLI coding agents headless on identical specs and compare metrics"
 requires-python = ">=3.13"
