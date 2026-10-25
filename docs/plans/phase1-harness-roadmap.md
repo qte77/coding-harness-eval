@@ -15,15 +15,9 @@ and the `validate` + `scope` graders (#12). Everything below is open, in order.
 
 ## Critical path (epic #24)
 
-### 1. `solution_grader` — finish #12
-The last grader. **Decide the overlap algorithm first:**
-
-- (a) file-overlap — coarse; largely redundant with `scope_grader`.
-- **(b) hunk / line-overlap (recommended)** — fraction of the canonical `diff(broken → solution)`
-  reproduced in the agent's diff, whitespace/format-normalized; a real partial-credit signal.
-- (c) behavioral apply-and-test — avoid; duplicates `validate_grader`'s pass/fail.
-
-Operates on the M1 fixture `fixtures/<spec>/{broken,solution}/`. TDD. **Unblocked.**
+### 1. ~~`solution_grader` — finish #12~~ (done)
+~~The last grader.~~ Implemented with **(b) hunk / line-overlap**: fraction of the canonical
+`diff(broken → solution)` changed lines reproduced in the agent's diff, whitespace-normalized.
 
 ### 2. CC collector — #10
 Collector ABC + `cc_collector.py`. Wraps `cc-recursive-team-mode` (git-only `agents` extra;
