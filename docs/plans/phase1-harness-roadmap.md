@@ -45,7 +45,8 @@ Multi-column `comparison.md` (correctness | time | cost | tokens | scope), N=3 m
 
 - Confirm headless `-p` / `--output-format` modes for Cline / opencode / Codebuff / Gemini, and the
   **Gemini → Antigravity** binary name → unblocks **#11 generic collector**.
-- Re-verify Anthropic pricing; audit repo-baseline payloads (feeds #25).
+- ~~Re-verify Anthropic pricing~~ (done 2026-10-25, see `spike-22` note; Codebuff has no
+  headless CLI flag, SDK only); audit repo-baseline payloads (feeds #25).
 
 ## Cross-cutting (before any real untrusted-agent run)
 
