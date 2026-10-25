@@ -16,7 +16,7 @@
 - Runs CC, Cline, opencode, Codebuff, and Antigravity CLI headless on identical specs
 - Collects structured metrics: correctness, wall time, tokens, cost, turn count, scope adherence
 - Generates comparison reports across all agent-spec combinations
-- Grader package: `Grader` ABC + `ValidateGrader` and `ScopeGrader` implemented; `SolutionGrader` stubbed (TDD red, implementation pending)
+- Grader package: `Grader` ABC + `ValidateGrader`, `ScopeGrader` and `SolutionGrader` (hunk/line overlap vs the canonical solution) implemented
 - Phase 0 in progress: graders-first slice done; collector and runner implementation pending
 - Already present: `Makefile`, `Makefile.python`, `research/` submodule, `LICENSE`, `SECURITY.md`
 

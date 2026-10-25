@@ -11,13 +11,8 @@ Fixture layout (M1 contract):
 import subprocess
 from pathlib import Path
 
-import pytest
-
 from harness.graders.solution_grader import SolutionGrader
 from harness.models import ExpectedSolution, SpecConfig
-
-_XFAIL = pytest.mark.xfail(strict=True, reason="TDD red: grader impl pending")
-
 
 # ---------------------------------------------------------------------------
 # helpers
@@ -79,7 +74,6 @@ def _spec(fixture: Path) -> SpecConfig:
 # ---------------------------------------------------------------------------
 
 
-@_XFAIL
 def test_no_expected_solution_is_skipped(tmp_path: Path):
     """None expected_solution -> score 1.0, passed True, details 'skipped'."""
     # No git repo needed: grader should return 'skipped' before touching the worktree.
@@ -92,7 +86,6 @@ def test_no_expected_solution_is_skipped(tmp_path: Path):
     assert "skipped" in result.details.lower()
 
 
-@_XFAIL
 def test_perfect_match_scores_one(tmp_path: Path):
     """Agent reproduces the entire canonical diff -> score 1.0."""
     broken = {"bug.py": "x = 1\n"}
@@ -107,7 +100,6 @@ def test_perfect_match_scores_one(tmp_path: Path):
     assert result.passed
 
 
-@_XFAIL
 def test_partial_match_returns_fraction(tmp_path: Path):
     """Agent fixes only part of the required changes -> score is a proper fraction."""
     # canonical fix: two lines change; agent fixes only one
@@ -124,7 +116,20 @@ def test_partial_match_returns_fraction(tmp_path: Path):
     assert not result.passed
 
 
-@_XFAIL
+def test_whitespace_only_differences_still_match(tmp_path: Path):
+    """Agent's fix differs from the canonical one only in whitespace -> score 1.0."""
+    broken = {"a.py": "def f():\n    return 1\n"}
+    solution = {"a.py": "def f():\n    return 2\n"}
+    fixture = _make_fixture(tmp_path, broken, solution)
+    worktree = _make_worktree(tmp_path, broken, {"a.py": "def f():\n\treturn  2\n"})
+    spec = _spec(fixture)
+
+    result = SolutionGrader().grade(worktree, spec)
+
+    assert result.score == 1.0
+    assert result.passed
+
+
 def test_zero_overlap_scores_zero(tmp_path: Path):
     """Agent changes files not in the canonical diff -> score 0.0."""
     broken = {"a.py": "x = 1\n"}
