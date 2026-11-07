@@ -5,8 +5,8 @@ Antigravity CLI headless on identical specs, collects structured metrics, and
 generates comparison reports.
 
 Phase 0: graders-first slice. The `Grader` ABC (named `Grader`, not BaseGrader) plus
-`ValidateGrader` and `ScopeGrader` are implemented; `SolutionGrader` is a TDD-red stub
-(xfail spec tests, implementation pending). Collector and runner are pending.
+`ValidateGrader`, `ScopeGrader` and `SolutionGrader` are implemented. Collector and runner
+are pending.
 
 ## Working here
 
