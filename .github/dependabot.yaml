@@ -1,7 +1,8 @@
 ---
-# Grouped weekly updates, one PR per ecosystem. `uv` tracks pyproject.toml + uv.lock
-# (the `pip` ecosystem does not read uv.lock); `github-actions` keeps the SHA pins in
-# .github/workflows/ current.
+# Grouped weekly updates. `uv` tracks pyproject.toml + uv.lock (the `pip` ecosystem
+# does not read uv.lock); `github-actions` keeps the SHA pins in .github/workflows/
+# current. Per ecosystem, minor and patch bumps share one PR and majors get their own,
+# so a breaking major never holds back the routine bumps.
 version: 2
 updates:
   - package-ecosystem: "uv"
@@ -11,6 +12,10 @@ updates:
     groups:
       python-deps:
         patterns: ["*"]
+        update-types: ["minor", "patch"]
+      python-deps-major:
+        patterns: ["*"]
+        update-types: ["major"]
     commit-message:
       prefix: "chore(deps)"
   - package-ecosystem: "github-actions"
@@ -20,6 +25,10 @@ updates:
     groups:
       github-actions:
         patterns: ["*"]
+        update-types: ["minor", "patch"]
+      github-actions-major:
+        patterns: ["*"]
+        update-types: ["major"]
     commit-message:
       prefix: "chore(ci)"
 ...
