@@ -1,11 +1,10 @@
 ---
-# https://github.blog/changelog/2023-01-18-code-scanning-codeql-action-v1-is-now-deprecated/
 name: "CodeQL"
 
 on:
   push:
+    branches: [ main ]
   pull_request:
-    types: [closed]
     branches: [ main ]
   schedule:
     - cron: '27 11 * * 0'
