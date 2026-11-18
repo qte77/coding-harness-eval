@@ -38,10 +38,9 @@ jobs:
 
       - name: Generate llms.txt
         run: |
-          mkdir -p "${{ env.LLMS_TXT_PATH }}"
-          LLMS_TXT_FILE="${{ env.LLMS_TXT_PATH }}/${{ env.LLMS_TXT_NAME }}"
-          REPO_NAME="${{ github.repository }}"
-          URL="https://${{ env.CONVERTER_URL }}/${REPO_NAME}/tree/${BRANCH}"
+          mkdir -p "${LLMS_TXT_PATH}"
+          LLMS_TXT_FILE="${LLMS_TXT_PATH}/${LLMS_TXT_NAME}"
+          URL="https://${CONVERTER_URL}/${GITHUB_REPOSITORY}/tree/${BRANCH}"
           curl -sL "${URL}" -o "${LLMS_TXT_FILE}"
           echo "Generated ${LLMS_TXT_FILE} from ${URL}"
 
@@ -49,7 +48,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          LLMS_TXT_FILE="${{ env.LLMS_TXT_PATH }}/${{ env.LLMS_TXT_NAME }}"
+          LLMS_TXT_FILE="${LLMS_TXT_PATH}/${LLMS_TXT_NAME}"
           git add "${LLMS_TXT_FILE}"
           git diff --cached --quiet || git commit -m "docs: update ${LLMS_TXT_FILE} from ${CONVERTER_URL}"
           git push
