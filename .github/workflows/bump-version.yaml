@@ -1,0 +1,32 @@
+---
+name: Bump Version
+
+# Calls the shared qte77/.github bump-version workflow. It bumps the version
+# files from [tool.bumpversion] in pyproject.toml, syncs the project entry in
+# uv.lock, folds changelog.d/ fragments into CHANGELOG.md with scriv, and opens
+# a PR with a signed commit. It does not tag.
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump_type:
+        description: "Version bump type"
+        required: true
+        default: patch
+        type: choice
+        options: [patch, minor, major]
+
+permissions:
+  contents: read
+
+jobs:
+  bump:
+    uses: qte77/.github/.github/workflows/bump-version.yml@4613389d22779a8d8ba623a418f7c94415e49da9  # main 2026-11-12 (qte77/.github#64)
+    permissions:
+      contents: write
+      pull-requests: write
+    with:
+      bump_type: ${{ inputs.bump_type }}
+      sync_lockfile: true
+      collect_scriv: true
+...
