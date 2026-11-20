@@ -57,8 +57,8 @@ jobs:
         run: |
           git config user.email "bump-my-version@github-actions.local"
           git config user.name "bump-my-version"
-          git checkout -b "${{ env.BRANCH_NEW }}"
-          echo "branch_new=${{ env.BRANCH_NEW }}" >> $GITHUB_OUTPUT
+          git checkout -b "${BRANCH_NEW}"
+          echo "branch_new=${BRANCH_NEW}" >> "$GITHUB_OUTPUT"
 
       - name: Bump version
         id: bump
@@ -73,19 +73,22 @@ jobs:
         if: steps.bump.outputs.bumped == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PREVIOUS_VERSION: ${{ steps.bump.outputs.previous-version }}
+          CURRENT_VERSION: ${{ steps.bump.outputs.current-version }}
         run: |
-          src="${{ env.SCRIPT_PATH }}/create_pr.sh"
+          src="${SCRIPT_PATH}/create_pr.sh"
           chmod +x "$src"
-          $src "${{ github.ref_name }}" "${{ env.BRANCH_NEW }}" "${{ env.SKIP_PR_HINT }}" "${{ steps.bump.outputs.previous-version }}" "${{ steps.bump.outputs.current-version }}"
+          "$src" "${GITHUB_REF_NAME}" "${BRANCH_NEW}" "${SKIP_PR_HINT}" "${PREVIOUS_VERSION}" "${CURRENT_VERSION}"
 
       - name: Delete branch, PR and tag in case of failure or cancel
         if: failure() || cancelled()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CURRENT_VERSION: ${{ steps.bump.outputs.current-version }}
         run: |
-          src="${{ env.SCRIPT_PATH }}/delete_branch_pr_tag.sh"
+          src="${SCRIPT_PATH}/delete_branch_pr_tag.sh"
           chmod +x "$src"
-          $src "${{ github.repository }}" "${{ env.BRANCH_NEW }}" "${{ steps.bump.outputs.current-version }}"
+          "$src" "${GITHUB_REPOSITORY}" "${BRANCH_NEW}" "${CURRENT_VERSION}"
 
       - name: Set summary data
         id: set_summary
